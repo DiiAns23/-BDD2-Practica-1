@@ -117,6 +117,7 @@ BEGIN TRY
 		END
 END TRY
 BEGIN CATCH
+	INSERT INTO HistoryLog(Date,Description) VALUES (GETDATE(),'Fallo creación de estudiante TR1');
 	SELECT
 		ERROR_NUMBER() AS ErrorNumber,
 		ERROR_MESSAGE()  AS ErrorMessage;
@@ -170,6 +171,7 @@ BEGIN TRY
 		END
 END TRY
 BEGIN CATCH
+	INSERT INTO HistoryLog(Date,Description) VALUES (GETDATE(),'Fallo cambio de roles TR2');
 	SELECT 
 		ERROR_NUMBER() AS ErrorNumber,
 		ERROR_MESSAGE() AS Errormessage;
@@ -256,6 +258,7 @@ BEGIN TRY
 		END
 END TRY
 BEGIN CATCH
+	INSERT INTO HistoryLog(Date,Description) VALUES (GETDATE(),'Fallo asignación de curso TR3');
 	SELECT
 		ERROR_NUMBER() AS ErrorNumber,
 		ERROR_MESSAGE() AS ErrorMessage;
@@ -286,6 +289,7 @@ BEGIN TRY
 		END
 END TRY
 BEGIN CATCH
+	INSERT INTO HistoryLog(Date,Description) VALUES (GETDATE(),'Fallo nuevo rol para estudiante TR4');
 	SELECT
 		ERROR_NUMBER() AS ErrorNumber,
 		ERROR_MESSAGE() AS ErrorMessage;
@@ -319,6 +323,7 @@ BEGIN TRY
 		END
 END TRY
 BEGIN CATCH
+	INSERT INTO HistoryLog(Date,Description) VALUES (GETDATE(),'Fallo creación de cursos TR5');
 	SELECT 
 		ERROR_NUMBER() AS ErrorNumber,
 		ERROR_MESSAGE() AS ErrorMessage;
